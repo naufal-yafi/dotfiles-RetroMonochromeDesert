@@ -21,6 +21,10 @@
       - [Open menu or search apps](#open-menu-or-search-apps)
       - [Quit or Restart](#quit-or-restart)
       - [Change type window tiled, floating, fullscreen](#change-type-window-tiled-floating-fullscreen)
+      - [Expand window](#expand-window)
+      - [Contract window](#contract-window)
+      - [Move floating window](#move-floating-window)
+      - [Move next or previous](#move-next-or-previous)
 
 ## Preview
 
@@ -68,18 +72,36 @@ Theme by: [Me](https://github.com/naufal-yafi/dotfiles-RetroMonochromeDesert)
 ## Keybindings
 
 ### Key Maps
-| Key                   | *                        |
-|-----------------------|--------------------------|
-| super + *enter*       | open terminal            |
-| super + *shift* + `q` | close window             |
-| super + *space*       | open menu or search apps |
-| super + *alt* + `r`   | restart bspwm            |
-| super + *alt* + `q`   | quit bspwm               |
-| super + `f`           | fullscreen window        |
-| super + `p`           | pseudo tiled window        |
-| super + `s`           | floating window          |
-| super + `t`           | tiled fullscreen          |
-| super + `0`           | |
+| Key                         | *                        |
+|-----------------------------|--------------------------|
+| super + *enter*             | open terminal            |
+| super + *shift* + `q`       | close window             |
+| super + *space*             | open menu or search apps |
+| super + *alt* + `r`         | `restart` bspwm          |
+| super + *alt* + `q`         | `quit` bspwm             |
+| **Type window** :           |
+| super + `f`                 | `fullscreen` window      |
+| super + `p`                 | `pseudo tiled` window    |
+| super + `s`                 | `floating` window        |
+| super + `t`                 | `tiled` fullscreen       |
+| **Maximize window** :       |
+| super + *alt* + `h`         | expand window `left`     |
+| super + *alt* + `j`         | expand window `bottom`   |
+| super + *alt* + `k`         | expand window `top`      |
+| super + *alt* + `l`         | expand window `right`    |
+| **Minimize window** :       |
+| super + *alt* + `h`         | contract window `left`   |
+| super + *alt* + `j`         | contract window `bottom` |
+| super + *alt* + `k`         | contract window `top`    |
+| super + *alt* + `l`         | contract window `right`  |
+| **Moving floating window** :|
+| super + *Left*              | move to `left`           |
+| super + *Up*                | move to `top`            |
+| super + *Right*             | move to `right`          |
+| super + *Down*              | move to `bottom`         |
+| **Workspace** :             |
+| super + `[`                 | `previous` workspace     |
+| super + `]`                 | `next` workspace         |
 
 ### Configuration
 
@@ -111,4 +133,28 @@ super + alt + {q,r}
 ```sh
 super + {t,p,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+```
+
+#### Expand window
+```sh
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
+```
+
+#### Contract window
+```sh
+super + alt + shift + {h,j,k,l}
+	bspc node -z {left 20 0, bottom 0 -20, top 0 20, right -20 0}
+```
+
+#### Move floating window
+```sh
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0, 0 20, 0 -20, 20 0}
+```
+
+#### Move next or previous 
+```sh
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
 ```

@@ -1,3 +1,7 @@
+# -------------------------------------------------
+# Utils
+# -------------------------------------------------
+
 # open terminal
 super + Return
 	kitty
@@ -14,6 +18,34 @@ super + space
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
+# -------------------------------------------------
+# Window 
+# -------------------------------------------------
+
 # change type window tiled, floating, fullscreen
 super + {t,p,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {left 20 0, bottom 0 -20, top 0 20, right -20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0, 0 20, 0 -20, 20 0}
+
+# -------------------------------------------------
+# Workspace
+# -------------------------------------------------
+
+# move next/previous workspace
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# move workspace by index
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
