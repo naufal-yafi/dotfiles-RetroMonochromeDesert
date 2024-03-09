@@ -14,8 +14,12 @@
     - [1.4 Updating config GRUB](#14-updating-config-grub)
     - [1.5 Reboot system](#15-reboot-system)
   - [2. Configuration ZSH](#2-configuration-zsh)
-    - [2.1 Install ZSH](#21-install-zsh)
-    - [2.2 Customize using Powerlevel10k](#22-customize-using-powerlevel10k)
+    - [2.1 Install Shell](#21-install-shell)
+      - [2.1.1 Install ZSH](#211-install-zsh)
+      - [2.1.2 Change default shell](#212-change-default-shell)
+    - [2.2 Customize shell](#22-customize-shell)
+      - [2.2.1 Download Font](#221-download-font)
+      - [2.2.2 Change default theme zsh on `.zshrc`](#222-change-default-theme-zsh-on-zshrc)
   - [3. Customize BSPWM Theme](#3-customize-bspwm-theme)
     - [3.1 Install Dependency](#31-install-dependency)
     - [3.2 Copy config](#32-copy-config)
@@ -77,11 +81,68 @@ sudo reboot
 
 ## 2. Configuration ZSH
 
-### 2.1 Install ZSH
+### 2.1 Install Shell
+
+#### 2.1.1 Install ZSH
+```sh
+sudo apt install zsh
+```
+
+#### 2.1.2 Change default shell
+```sh
+zsh
+```
+
+- Type `1`  
+  (1) Continue to the main menu.
+- Type `1`  
+  (1) Configure setting for history...  
+- Type `1`  
+  (1) Number of lines of history...  
+  then press `enter`
+- Type `2`  
+  (2) File where history...  
+  then press `enter`
+- Type `3`
+  (3) Member of lines of history...  
+  then press `enter`
+- Type `0`  
+  (0) ...return main menu
+- Type `2`  
+  (2) Configure the new...
+- Type `1`  
+  (1) ...default options.
+- Type `0`  
+  (0) Exit, saving the new settings...
+- Type `sudo -s`
+- Type `chsh -s /bin/zsh your_name`
+- Then `reboot`
 
 [[Table of Contents](#table-of-contents)]
 
-### 2.2 Customize using Powerlevel10k
+### 2.2 Customize shell
+
+#### 2.2.1 [Download Font](https://www.nerdfonts.com/)
+
+- Move to `/usr/local/share/fonts`
+
+- Regenerate font cache
+```sh
+fc-cache -f -v
+```
+
+- Verify installation
+```sh
+fc-list | grep "MesloLGS"
+```
+
+[[Table of Contents](#table-of-contents)]
+
+#### 2.2.2 Change default theme zsh on `.zshrc`
+
+```
+ZSH_THEME="gnzh"
+```
 
 [[Table of Contents](#table-of-contents)]
 
@@ -99,52 +160,52 @@ Theme by: [Me](https://github.com/naufal-yafi/dotfiles-RetroMonochromeDesert)
 
 ## Require Dependencies
 
-| Dependency | *  |
-|------------|----|
-| bspwm      | |
-| sxhkd      | |
-| polybar    | |
-| picom      | |
-| rofi       | |
-| nitrogen   | |
-| kitty      | |
+| Dependency | *                     |
+|------------|-----------------------|
+| bspwm      | tiling window manager |
+| sxhkd      | input event           |
+| polybar    | status bar            |
+| picom      | compositor            |
+| rofi       | launcher search app   |
+| kitty      | terminal              |
+| nitrogen   |                       |
 
 [[Table of Contents](#table-of-contents)]
 
 ## Keybindings
 
 ### Key Maps
-| Key                         | *                        |
-|-----------------------------|--------------------------|
-| super + *enter*             | open terminal            |
-| super + *shift* + `q`       | close window             |
-| super + *space*             | open menu or search apps |
-| super + *alt* + `r`         | `restart` bspwm          |
-| super + *alt* + `q`         | `quit` bspwm             |
-| **Type window** :           |
-| super + `f`                 | `fullscreen` window      |
-| super + `p`                 | `pseudo tiled` window    |
-| super + `s`                 | `floating` window        |
-| super + `t`                 | `tiled` fullscreen       |
-| **Maximize window** :       |
-| super + *alt* + `h`         | expand window `left`     |
-| super + *alt* + `j`         | expand window `bottom`   |
-| super + *alt* + `k`         | expand window `top`      |
-| super + *alt* + `l`         | expand window `right`    |
-| **Minimize window** :       |
-| super + *alt* + `h`         | contract window `left`   |
-| super + *alt* + `j`         | contract window `bottom` |
-| super + *alt* + `k`         | contract window `top`    |
-| super + *alt* + `l`         | contract window `right`  |
-| **Moving floating window** :|
-| super + *Left*              | move to `left`           |
-| super + *Up*                | move to `top`            |
-| super + *Right*             | move to `right`          |
-| super + *Down*              | move to `bottom`         |
-| **Workspace** :             |
-| super + `[`                 | `previous` workspace     |
-| super + `]`                 | `next` workspace         |
-| super + {1 - 0}             | move workspace by index  |
+| No | Key                         | *                        |
+|----|-----------------------------|--------------------------|
+| 1  | super + *enter*             | open terminal            |
+| 2  | super + *shift* + `q`       | close window             |
+| 3  | super + *space*             | open menu or search apps |
+| 4  | super + *alt* + `r`         | `restart` bspwm          |
+| 5  | super + *alt* + `q`         | `quit` bspwm             |
+|    | **Type window** :           |
+| 6  | super + `f`                 | `fullscreen` window      |
+| 7  | super + `p`                 | `pseudo tiled` window    |
+| 8  | super + `s`                 | `floating` window        |
+| 9  | super + `t`                 | `tiled` fullscreen       |
+|    | **Maximize window** :       |
+| 10 | super + *alt* + `h`         | expand window `left`     |
+| 11 | super + *alt* + `j`         | expand window `bottom`   |
+| 12 | super + *alt* + `k`         | expand window `top`      |
+| 12 | super + *alt* + `l`         | expand window `right`    |
+|    | **Minimize window** :       |
+| 13 | super + *alt* + `h`         | contract window `left`   |
+| 14 | super + *alt* + `j`         | contract window `bottom` |
+| 15 | super + *alt* + `k`         | contract window `top`    |
+| 16 | super + *alt* + `l`         | contract window `right`  |
+|    | **Moving floating window** :|
+| 17 | super + *Left*              | move to `left`           |
+| 18 | super + *Up*                | move to `top`            |
+| 19 | super + *Right*             | move to `right`          |
+| 20 | super + *Down*              | move to `bottom`         |
+|    | **Workspace** :             |
+| 21 | super + `[`                 | `previous` workspace     |
+| 22 | super + `]`                 | `next` workspace         |
+| 23 | super + {1 - 0}             | move workspace by index  |
 
 [[Table of Contents](#table-of-contents)]
 
