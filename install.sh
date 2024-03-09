@@ -20,7 +20,7 @@ grub_installation() {
   sudo git clone https://github.com/Jacksaur/CRT-Amber-GRUB-Theme.git
 
   # change default grub theme
-  sudo sed -i 's/^#GRUB_THEME=.*/GRUB_THEME=\/boot\/grub\/themes\/CRT-Amber-GRUB-Theme\/theme.txt/' /etdefault/grub
+  sudo sed -i 's/^#GRUB_THEME=.*/GRUB_THEME=\/boot\/grub\/themes\/CRT-Amber-GRUB-Theme\/theme.txt/' /etc/default/grub
 
   # update grub
   sudo update-grub
@@ -29,7 +29,7 @@ grub_installation() {
 }
 
 bspwm_installation() {
-  echo "Installing Window Manager Theme..."
+  echo "Wait maintenance.."
 }
 
 banner

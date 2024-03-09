@@ -42,9 +42,9 @@ cd /boot/grub/themes
 ```sh
 sudo git clone https://github.com/Jacksaur/CRT-Amber-GRUB-Theme.git
 ```
-4. Change config default GRUB theme
+4. Change config default GRUB theme `/etc/default/grub`
 ```sh
-sudo sed -i 's/^#GRUB_THEME=.*/GRUB_THEME=\/boot\/grub\/themes\/CRT-Amber-GRUB-Theme\/theme.txt/' /etdefault/grub
+sudo sed -i 's/^#GRUB_THEME=.*/GRUB_THEME=\/boot\/grub\/themes\/CRT-Amber-GRUB-Theme\/theme.txt/' /etc/default/grub
 ```
 5. Updating config GRUB
 ```sh
