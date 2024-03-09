@@ -1,0 +1,19 @@
+# open terminal
+super + Return
+	kitty
+
+# close window
+super + shift + {q,k}
+	bspc node -{c,k}
+
+# open menu or search apps
+super + space
+	rofi -show drun
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# change type window tiled, floating, fullscreen
+super + {t,p,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
