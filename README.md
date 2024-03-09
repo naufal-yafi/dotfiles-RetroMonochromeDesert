@@ -33,24 +33,23 @@ sh install.sh -g
 
 ### Manual Installation
 
-1. Install `git`
-2. Move to directory `/boot/grub/themes`
+1. Move to directory `/boot/grub/themes`
 ```sh
 cd /boot/grub/themes
 ```
-3. Cloning repository
+2. Cloning repository
 ```sh
 sudo git clone https://github.com/Jacksaur/CRT-Amber-GRUB-Theme.git
 ```
-4. Change config default GRUB theme `/etc/default/grub`
+3. Change config default GRUB theme `/etc/default/grub`
 ```sh
 sudo sed -i 's/^#GRUB_THEME=.*/GRUB_THEME=\/boot\/grub\/themes\/CRT-Amber-GRUB-Theme\/theme.txt/' /etc/default/grub
 ```
-5. Updating config GRUB
+4. Updating config GRUB
 ```sh
 sudo update-grub
 ```
-6. Reboot system
+5. Reboot system
 
 ## Installation BSPWM Theme
 
@@ -70,7 +69,6 @@ sh install.sh -b
 
 | Dependency | *  |
 |------------|----|
-| git        | |
 | bspwm      | |
 | sxhkd      | |
 | polybar    | |

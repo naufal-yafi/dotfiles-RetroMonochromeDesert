@@ -11,9 +11,6 @@ banner() {
 
 grub_installation() {
   echo "Installing Grub..."
-  
-  # installing git
-  sudo apt install git
 
   # cloning github repo grub theme
   cd /boot/grub/themes
