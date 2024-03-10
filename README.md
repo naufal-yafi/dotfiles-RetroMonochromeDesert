@@ -181,6 +181,7 @@ Theme by: [Me](https://github.com/naufal-yafi/dotfiles-RetroMonochromeDesert)
 | rofi       | launcher search app   |
 | kitty      | terminal              |
 | feh        | desktop wallpaper     |
+| neofetch   | system info           |
 
 [[Table of Contents](#table-of-contents)]
 
