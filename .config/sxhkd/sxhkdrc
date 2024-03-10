@@ -18,6 +18,10 @@ super + space
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
 # -------------------------------------------------
 # Window 
 # -------------------------------------------------
@@ -38,6 +42,10 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0, 0 20, 0 -20, 20 0}
 
+# maximize minimize tiled window
+super + m
+	bspc desktop -l next
+
 # -------------------------------------------------
 # Workspace
 # -------------------------------------------------
@@ -49,3 +57,19 @@ super + bracket{left,right}
 # move workspace by index
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# focus the next desktop in the current monitor
+super + Tab
+    bspc desktop -f next.local
+
+# -------------------------------------------------
+# Focus
+# -------------------------------------------------
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the node in the given direction
+super + {_,shift + }{h, l}
+	bspc node -{f,s} {west, east}

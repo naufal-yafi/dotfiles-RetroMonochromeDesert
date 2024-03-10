@@ -38,6 +38,10 @@
       - [8. Move floating window](#8-move-floating-window)
       - [9. Move next or previous workspace](#9-move-next-or-previous-workspace)
       - [10. Move workspace by index](#10-move-workspace-by-index)
+      - [11. focus the next/previous window in the current desktop](#11-focus-the-nextprevious-window-in-the-current-desktop)
+      - [12. focus the node in the given direction](#12-focus-the-node-in-the-given-direction)
+- [13. maximize minimize tiled window](#13-maximize-minimize-tiled-window)
+- [14. Move next workspace](#14-move-next-workspace)
 
 ## Preview
 
@@ -183,37 +187,43 @@ Theme by: [Me](https://github.com/naufal-yafi/dotfiles-RetroMonochromeDesert)
 ## Keybindings
 
 ### Key Maps
-| No | Key                         | *                        |
-|----|-----------------------------|--------------------------|
-| 1  | super + *enter*             | open terminal            |
-| 2  | super + *shift* + `q`       | close window             |
-| 3  | super + *space*             | open menu or search apps |
-| 4  | super + *alt* + `r`         | `restart` bspwm          |
-| 5  | super + *alt* + `q`         | `quit` bspwm             |
+| No | Key                         | *                               |
+|----|-----------------------------|---------------------------------|
+| 1  | super + *enter*             | open terminal                   |
+| 2  | super + *shift* + `q`       | close window                    |
+| 3  | super + *space*             | open menu or search apps        |
+| 4  | super + *alt* + `r`         | `restart` bspwm                 |
+| 5  | super + *alt* + `q`         | `quit` bspwm                    |
+| 6  | super + *alt* + `m`         | `quit` or minimize tiled window |
 |    | **Type window** :           |
-| 6  | super + `f`                 | `fullscreen` window      |
-| 7  | super + `p`                 | `pseudo tiled` window    |
-| 8  | super + `s`                 | `floating` window        |
-| 9  | super + `t`                 | `tiled` fullscreen       |
+| 7  | super + `f`                 | `fullscreen` window             |
+| 8  | super + `p`                 | `pseudo tiled` window           |
+| 9  | super + `s`                 | `floating` window               |
+| 10 | super + `t`                 | `tiled` fullscreen              |
 |    | **Maximize window** :       |
-| 10 | super + *alt* + `h`         | expand window `left`     |
-| 11 | super + *alt* + `j`         | expand window `bottom`   |
-| 12 | super + *alt* + `k`         | expand window `top`      |
-| 12 | super + *alt* + `l`         | expand window `right`    |
+| 11 | super + *alt* + `h`         | expand window `left`            |
+| 12 | super + *alt* + `j`         | expand window `bottom`          |
+| 13 | super + *alt* + `k`         | expand window `top`             |
+| 14 | super + *alt* + `l`         | expand window `right`           |
 |    | **Minimize window** :       |
-| 13 | super + *alt* + `h`         | contract window `left`   |
-| 14 | super + *alt* + `j`         | contract window `bottom` |
-| 15 | super + *alt* + `k`         | contract window `top`    |
-| 16 | super + *alt* + `l`         | contract window `right`  |
+| 15 | super + *alt* + `h`         | contract window `left`          |
+| 16 | super + *alt* + `j`         | contract window `bottom`        |
+| 17 | super + *alt* + `k`         | contract window `top`           |
+| 18 | super + *alt* + `l`         | contract window `right`         |
 |    | **Moving floating window** :|
-| 17 | super + *Left*              | move to `left`           |
-| 18 | super + *Up*                | move to `top`            |
-| 19 | super + *Right*             | move to `right`          |
-| 20 | super + *Down*              | move to `bottom`         |
+| 19 | super + *Left*              | move to `left`                  |
+| 20 | super + *Up*                | move to `top`                   |
+| 21 | super + *Right*             | move to `right`                 |
+| 22 | super + *Down*              | move to `bottom`                |
 |    | **Workspace** :             |
-| 21 | super + `[`                 | `previous` workspace     |
-| 22 | super + `]`                 | `next` workspace         |
-| 23 | super + {1 - 0}             | move workspace by index  |
+| 23 | super + `[`                 | `previous` workspace            |
+| 24 | super + `]` or *Tab*        | `next` workspace                |
+| 25 | super + {1 - 0}             | move workspace by index         |
+|    | **Focus** :                 |
+| 26 | super + *shift* + `c`       | change window focus             |
+|    | **Moving tiling window** :  |
+| 27 | super + *shift* + `h`       | move to `left`                  |
+| 28 | super + *shift* + `l`       | move to `right`                 |
 
 [[Table of Contents](#table-of-contents)]
 
@@ -298,3 +308,27 @@ super + {_,shift + }{1-9,0}
 ```
 
 [[Table of Contents](#table-of-contents)]
+
+#### 11. focus the next/previous window in the current desktop
+```sh
+super + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+```
+
+#### 12. focus the node in the given direction
+```sh
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+```
+
+# 13. maximize minimize tiled window
+```sh
+super + m
+	bspc desktop -l next
+```
+
+# 14. Move next workspace
+```sh
+super + Tab
+  bspc desktop -f next.local
+```
