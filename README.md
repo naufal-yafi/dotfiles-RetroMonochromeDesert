@@ -180,7 +180,7 @@ Theme by: [Me](https://github.com/naufal-yafi/dotfiles-RetroMonochromeDesert)
 | picom      | compositor            |
 | rofi       | launcher search app   |
 | kitty      | terminal              |
-| nitrogen   |                       |
+| feh        | desktop wallpaper     |
 
 [[Table of Contents](#table-of-contents)]
 
