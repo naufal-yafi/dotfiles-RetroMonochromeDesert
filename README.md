@@ -1,6 +1,6 @@
 # Theme : Retro Monochrome Desert
 
-![distro](https://img.shields.io/badge/distro-mx_linux-black) ![window manager](https://img.shields.io/badge/wm-bspwm-blue) ![compositor](https://img.shields.io/badge/compositor-picom-white) ![launcher](https://img.shields.io/badge/launcher-rofi-black) ![status bar](https://img.shields.io/badge/bar-polybar-red) ![terminal](https://img.shields.io/badge/terminal-kitty-brown) ![keybinding](https://img.shields.io/badge/key-sxhkd-black) ![shell](https://img.shields.io/badge/shell-zsh-black) ![zsh theme](https://img.shields.io/badge/zsh_theme-powerlevel10k-black)
+![distro](https://img.shields.io/badge/distro-mx_linux-black) ![window manager](https://img.shields.io/badge/wm-bspwm-blue) ![compositor](https://img.shields.io/badge/compositor-picom-white) ![launcher](https://img.shields.io/badge/launcher-rofi-black) ![status bar](https://img.shields.io/badge/bar-polybar-red) ![terminal](https://img.shields.io/badge/terminal-kitty-brown) ![keybinding](https://img.shields.io/badge/key-sxhkd-black) ![shell](https://img.shields.io/badge/shell-zsh-black) ![shell](https://img.shields.io/badge/shell_theme-oh_my_zsh-black)
 
 # Table of Contents
 
@@ -19,7 +19,8 @@
       - [2.1.2 Change default shell](#212-change-default-shell)
     - [2.2 Customize shell](#22-customize-shell)
       - [2.2.1 Download Font](#221-download-font)
-      - [2.2.2 Change default theme zsh on `.zshrc`](#222-change-default-theme-zsh-on-zshrc)
+      - [2.2.2 Download Oh My Zsh](#222-download-oh-my-zsh)
+      - [2.2.3 Change default theme zsh on `.zshrc`](#223-change-default-theme-zsh-on-zshrc)
   - [3. Customize BSPWM Theme](#3-customize-bspwm-theme)
     - [3.1 Install Dependency](#31-install-dependency)
     - [3.2 Copy config](#32-copy-config)
@@ -138,7 +139,14 @@ fc-list | grep "MesloLGS"
 
 [[Table of Contents](#table-of-contents)]
 
-#### 2.2.2 Change default theme zsh on `.zshrc`
+#### 2.2.2 Download Oh My Zsh
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+[[Table of Contents](#table-of-contents)]
+
+#### 2.2.3 Change default theme zsh on `.zshrc`
 
 ```
 ZSH_THEME="gnzh"
