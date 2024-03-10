@@ -13,5 +13,5 @@ bspc config gapless_monocle      true
 
 sxhkd &
 picom --config $HOME/.config/picom/picom.conf &
-feh --bg-fill $HOME/.config/background/3d-10032024.jpg
+feh --bg-fill $HOME/.config/background/3d-10032024.jpg &
 polybar &

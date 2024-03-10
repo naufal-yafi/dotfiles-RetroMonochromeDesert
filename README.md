@@ -40,8 +40,8 @@
       - [10. Move workspace by index](#10-move-workspace-by-index)
       - [11. focus the next/previous window in the current desktop](#11-focus-the-nextprevious-window-in-the-current-desktop)
       - [12. focus the node in the given direction](#12-focus-the-node-in-the-given-direction)
-- [13. maximize minimize tiled window](#13-maximize-minimize-tiled-window)
-- [14. Move next workspace](#14-move-next-workspace)
+      - [13. maximize minimize tiled window](#13-maximize-minimize-tiled-window)
+      - [14. Move next workspace](#14-move-next-workspace)
 
 ## Preview
 
@@ -322,13 +322,13 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 ```
 
-# 13. maximize minimize tiled window
+#### 13. maximize minimize tiled window
 ```sh
 super + m
 	bspc desktop -l next
 ```
 
-# 14. Move next workspace
+#### 14. Move next workspace
 ```sh
 super + Tab
   bspc desktop -f next.local
